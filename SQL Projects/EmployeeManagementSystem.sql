@@ -1,13 +1,14 @@
--- 1. Create Departments Table
 
 CREATE DATABASE EmployeeManagementSystem;
 
 USE  EmployeeManagementSystem;
 
+-- 1. Create Departments Table
 CREATE TABLE Departments (
     DepartmentID INT PRIMARY KEY AUTO_INCREMENT,
     DepartmentName VARCHAR(100)
 );
+select * from Departments;
 
 -- 2. Create Employees Table
 CREATE TABLE Employees (
@@ -20,6 +21,7 @@ CREATE TABLE Employees (
     Phone VARCHAR(15),
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
+select * from Employees;
 
 -- 3. Create Salaries Table
 CREATE TABLE Salaries (
@@ -30,6 +32,7 @@ CREATE TABLE Salaries (
     EffectiveDate DATE,
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
+select * from Salaries;
 
 -- 4. Create Attendance Table
 CREATE TABLE Attendance (
@@ -39,6 +42,7 @@ CREATE TABLE Attendance (
     Status ENUM('Present', 'Absent', 'Leave'),
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
+select * from Attendance;
 
 -- Sample Data Insertion
 
